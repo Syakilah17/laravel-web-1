@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\PelangganController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::post('question/store', [QuestionController::class, 'store'])
 ->name('question.store');
@@ -34,4 +37,9 @@ Route::get('/about', function () {
 Route::get('/home', [HomeController::class, 'index'])->name(name: 'home');
 //hahahahah
 
+Route::resource('pelanggan', PelangganController::class);
 
+Route::get('dashboard', [DashboardController::class, 'index'])->name(name: 'dashboard');
+//hahahahah
+
+route('pelanggan.update', $dataPelanggan->pelanggan_id);
