@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -7,17 +6,15 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PelangganController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-Route::post('question/store', [QuestionController::class, 'store'])
-->name('question.store');
+Route::post('question/store', [QuestionController::class, 'store'])->name('question.store');
 
 Route::get('/pcr', function () {
     return 'Selamat Datang di Website Kampus PCR!';
 });
 
 Route::get('/matakuliah', function () {
-    return ' awokwok';
+    return 'awokwok';
 });
 
 Route::get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
@@ -34,12 +31,6 @@ Route::get('/about', function () {
     return view('halaman-about');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name(name: 'home');
-//hahahahah
-
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('pelanggan', PelangganController::class);
-
-Route::get('dashboard', [DashboardController::class, 'index'])->name(name: 'dashboard');
-//hahahahah
-
-route('pelanggan.update', $dataPelanggan->pelanggan_id);
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');

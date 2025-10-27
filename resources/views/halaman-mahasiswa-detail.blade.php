@@ -1,13 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
 <body>
-    <h1>Selmat Datang!</h1>
-    <h2>Ini Halaman Detail Mahasiswa</h2>
+ <h1>Selamat datang</h1>
+ <h2>Ini halaman detail mahasiswa</h2>
 </body>
 </html>
