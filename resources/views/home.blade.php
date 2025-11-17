@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
 </head>
+
 <body>
 
     {{-- Bagian Navigasi --}}
@@ -47,7 +49,7 @@
 
         <div class="p-5 mb-4 bg-light rounded-3 text-center">
             <div class="container-fluid py-5">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" width="350px">
+                <img src="{{ asset('assets/images/logo.jpg') }}" alt="Logo" width="350px">
                 <h1 class="display-5 fw-bold">{{$username}}</h1>
                 <p class="fs-4 col-md-8 mx-auto">{{$last_login}}</p>
                 <a href="#" class="btn btn-primary btn-lg mt-3">Pelajari Lebih Lanjut</a>
@@ -62,7 +64,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title font-custom" >Desain Modern</h5>
+                        <h5 class="card-title font-custom">Desain Modern</h5>
                         <p class="card-text">Dibangun dengan Bootstrap 5 untuk memastikan tampilan yang bersih dan responsif di semua perangkat.</p>
                     </div>
                 </div>
@@ -73,37 +75,37 @@
                     <div class="card-body">
                         <h5 class="card-title">Form Pertanyaan</h5>
 
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error )
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error )
                                 <li>{{$error}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
-                    @if (session('info'))
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        @if (session('info'))
                         <div class="alert alert-info">
                             {!! session('info') !!}
                         </div>
-                    @endif
+                        @endif
 
-                    <form action="{{ route('question.store') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" name="nama">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" name="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                            <textarea class="form-control" rows="4" name="pertanyaan"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
-                    </form>
+                        <form action="{{ route('question.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="form-control" name="nama">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                <textarea class="form-control" rows="4" name="pertanyaan"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -133,4 +135,5 @@
     {{-- Bootstrap 5 JS Bundle dari CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>
