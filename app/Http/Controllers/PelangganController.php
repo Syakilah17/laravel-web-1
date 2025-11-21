@@ -11,6 +11,7 @@ class PelangganController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $data['dataPelanggan'] = Pelanggan::all();
@@ -21,6 +22,8 @@ class PelangganController extends Controller
     {
         return view('admin.pelanggan.create');
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,8 +40,8 @@ class PelangganController extends Controller
         Pelanggan::create($data);
 
         return redirect()->route('pelanggan.index')->with('success', 'Penambahan Data Berhasil!');
+    
     }
-
     /**
      * Display the specified resource.
      */
@@ -62,6 +65,7 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $pelanggan_id = $id;
         $pelanggan = Pelanggan::findOrFail($pelanggan_id);
 
@@ -74,6 +78,8 @@ class PelangganController extends Controller
 
         $pelanggan->save();
         return redirect()->route('pelanggan.index')->with('success', 'Perubahan Data Berhasil!');
+
+
     }
 
     /**
@@ -81,8 +87,10 @@ class PelangganController extends Controller
      */
     public function destroy(string $id)
     {
+
         $pelanggan = Pelanggan::findOrFail($id);
         $pelanggan->delete();
         return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus');
     }
 }
+
